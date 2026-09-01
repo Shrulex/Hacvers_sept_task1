@@ -70,6 +70,10 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
   };
   const correlationData = holdings.length > 1 ? generateCorrelationMatrix() : null;
 
+    const totalValue = holdings.reduce((sum, h) => sum + h.currentValue, 0);
+  const totalPnl = holdings.reduce((sum, h) => sum + h.unrealizedPnl, 0);
+  const totalPnlPercent = totalValue > 0 ? (totalPnl / (totalValue - totalPnl)) * 100 : 0;
+
   // Smart Rebalancing Engine
   const generateRebalancePlan = () => {
     if (!health || !user) return [];
@@ -98,9 +102,7 @@ export const PortfolioView: React.FC<PortfolioViewProps> = ({
   const rebalancePlan = generateRebalancePlan();
 
 
-  const totalValue = holdings.reduce((sum, h) => sum + h.currentValue, 0);
-  const totalPnl = holdings.reduce((sum, h) => sum + h.unrealizedPnl, 0);
-  const totalPnlPercent = totalValue > 0 ? (totalPnl / (totalValue - totalPnl)) * 100 : 0;
+
 
   // Run What-If Simulation
   

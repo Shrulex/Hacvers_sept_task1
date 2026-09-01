@@ -1,0 +1,6 @@
+{
+  "name": "FinIntel Multi-Agent Platform",
+  "description": "Autonomous Multi-Agent Financial Intelligence Platform with explainable consensus, RAG-grounded fundamental research, deterministic risk evaluation, and personalized investor suitability.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

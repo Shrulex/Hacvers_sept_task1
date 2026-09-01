@@ -151,9 +151,19 @@ export interface ConflictItem {
   confidencePenalty: number;
 }
 
+export interface AgentDebate {
+  topic: string;
+  agent1: string;
+  agent1Argument: string;
+  agent2: string;
+  agent2Argument: string;
+  resolutionSynthesis: string;
+}
+
 export interface ConflictResult {
   hasConflicts: boolean;
   conflicts: ConflictItem[];
+  debates?: AgentDebate[];
   totalPenalty: number;
   summary: string;
 }

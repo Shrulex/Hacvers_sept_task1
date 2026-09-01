@@ -1,9 +1,22 @@
 @import "tailwindcss";
 
-@layer base {
+@media print {
   body {
-    background-color: #0B0F1A;
-    color: #E2E8F0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: white !important;
+    color: black !important;
+  }
+  .bg-[#0D1321], .bg-[#161F32], .bg-slate-800, .bg-slate-900 {
+    background-color: white !important;
+    border: 1px solid #ddd !important;
+    color: black !important;
+  }
+  .text-slate-200, .text-slate-300, .text-slate-400, .text-white {
+    color: #333 !important;
+  }
+  #sidebar, nav, header, button {
+    display: none !important;
+  }
+  .shadow-xs, .shadow-lg {
+    box-shadow: none !important;
   }
 }

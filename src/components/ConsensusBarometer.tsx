@@ -117,6 +117,37 @@ export const ConsensusBarometer: React.FC<ConsensusBarometerProps> = ({
               </p>
             </div>
           </div>
+          
+          {/* Agent Debate Room */}
+          {conflicts.debates && conflicts.debates.length > 0 && (
+            <div className="mt-4 border-t border-amber-500/10 pt-3">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="h-2 w-2 rounded-full bg-amber-500 animate-pulse"></div>
+                <h5 className="text-[10px] font-bold uppercase tracking-wider text-amber-400">Interactive Agent Debate Room</h5>
+              </div>
+              <div className="space-y-3">
+                {conflicts.debates.map((debate, i) => (
+                  <div key={i} className="rounded border border-slate-700/50 bg-[#0B0F1A] p-3 shadow-inner">
+                    <p className="text-[10px] font-mono text-slate-500 mb-2 border-b border-slate-800 pb-1">Topic: {debate.topic}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                      <div className="rounded bg-indigo-500/5 p-2 border border-indigo-500/10">
+                        <span className="text-[9px] font-bold uppercase text-indigo-400 mb-1 block">Agent: {debate.agent1}</span>
+                        <p className="text-[11px] text-slate-300 leading-relaxed italic">&quot;{debate.agent1Argument}&quot;</p>
+                      </div>
+                      <div className="rounded bg-rose-500/5 p-2 border border-rose-500/10">
+                        <span className="text-[9px] font-bold uppercase text-rose-400 mb-1 block">Agent: {debate.agent2}</span>
+                        <p className="text-[11px] text-slate-300 leading-relaxed italic">&quot;{debate.agent2Argument}&quot;</p>
+                      </div>
+                    </div>
+                    <div className="rounded bg-slate-800/50 p-2 border border-slate-700/50">
+                      <span className="text-[9px] font-bold uppercase text-emerald-400 mb-1 block">Resolution Synthesis</span>
+                      <p className="text-xs text-slate-200">{debate.resolutionSynthesis}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       ) : (
         <div className="rounded-lg border border-slate-800 bg-[#161F32] p-2.5 mb-3 text-xs text-slate-300 flex items-center gap-2">

@@ -195,6 +195,18 @@ export class AnalysisPipeline {
 
     // 7. Cross-Perspective Conflict Evaluation
     const conflicts = ConflictEngine.evaluate(rawAgentList);
+    
+    // 7.5. Generate LLM Agent Debates for Conflicts
+    try {
+      conflicts.debates = await llmProvider.generateDebate({
+        ticker: symbol,
+        companyName: snapshot.profile.name,
+        conflicts,
+        agents: agentsBundle
+      });
+    } catch {
+      conflicts.debates = [];
+    }
 
     // 8. Deterministic Confidence Calculation
     const confidenceBreakdown = ConfidenceEngine.calculate(

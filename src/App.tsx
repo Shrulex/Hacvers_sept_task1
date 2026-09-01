@@ -47,7 +47,8 @@ import {
 } from './types';
 import { 
   History, 
-  FileText, 
+  FileText,
+  Download, 
   Activity, 
   Sparkles, 
   ShieldAlert,
@@ -305,6 +306,15 @@ export default function App() {
                 >
                   <FileText className="h-3.5 w-3.5 text-indigo-400" />
                   <span>Verified Citations ({analysisData.evidenceCoverage.supportedClaimsCount})</span>
+                </button>
+
+                <button
+                  onClick={() => window.print()}
+                  className="flex items-center gap-1.5 rounded-lg border border-slate-700 bg-slate-800 px-3 py-1.5 text-xs font-semibold text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+                  title="Print or Save as PDF"
+                >
+                  <Download className="h-3.5 w-3.5 text-emerald-400" />
+                  <span className="hidden sm:inline">Export Report</span>
                 </button>
               </div>
             </div>

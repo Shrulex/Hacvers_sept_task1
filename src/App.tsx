@@ -1,3 +1,4 @@
+import { Copilot } from './components/Copilot';
 import React, { useState, useEffect } from 'react';
 import { 
   Navbar 
@@ -452,6 +453,7 @@ export default function App() {
           <span className="hidden md:inline text-slate-400">INVARIANTS: ENFORCED</span>
         </div>
       </footer>
+      <Copilot />
 
     </div>
   );

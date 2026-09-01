@@ -9,12 +9,17 @@ The system features robust safeguards against AI hallucination, utilizing a loca
 ## Key Features
 
 - **Multi-Agent Orchestration:** Five distinct AI agents evaluate the same asset from independent analytical perspectives.
+- **"FinGPT" Portfolio Copilot:** A context-aware conversational AI assistant that understands your entire portfolio and risk profile. Use it to interrogate your portfolio health or ask how macro shocks might impact your holdings.
+- **Smart Rebalancing Engine:** Actionable intelligence that generates specific trade execution plans (e.g., "Sell 15 shares of INFY") mathematically calculated to resolve sector over-concentration and optimize portfolio health.
+- **Cross-Asset Correlation Heatmap:** A visual matrix exposing "hidden" portfolio risks by calculating how closely your individual holdings move together.
+- **"Alternative Data" Agent (Pilot):** A specialized data perspective tracking non-traditional metrics like Insider Trading (CEO/CFO open market flows) and Institutional/Hedge Fund 13F accumulation.
 - **Interactive Agent Debate Room (Explainable AI):** When severe conflicts arise between agents (e.g., Technical signals Buy, Risk signals Sell), an LLM moderates a dynamic "debate" cross-examining their data to provide a transparent resolution for the user.
 - **Macro Stress Testing & Shock Simulations:** Subject your specific, personalized portfolio holdings to hypothetical macroeconomic shocks (e.g., Interest Rate Hikes, Market Crashes, Tech Booms) to project downstream impacts and drawdowns.
 - **RAG Evidence Validation:** Pre-synthesis filtering drops any fundamental claims that cannot be traced back to verified document sources.
 - **Strict Personalization Boundary:** Market intelligence (Objective) is calculated completely independently from user constraints (Personalized).
 - **Diagnostics & Audit Studio:** A dedicated environment to artificially degrade data freshness (Live -> Cached -> Stale -> Unavailable) and trace exact execution times, conflict penalties, and confidence math.
 - **What-If Simulations:** Project theoretical capital requirements and portfolio distributions without mutating actual database states.
+- **PDF Report Generation:** Print-optimized CSS layer for generating clean, white-background institutional-grade PDF reports directly from the dashboard.
 
 ## Architecture
 
@@ -22,7 +27,7 @@ This is a full-stack TypeScript application built with:
 - **Frontend:** React, Tailwind CSS, Lucide Icons, and Vite.
 - **Backend:** Express.js with a structured ES module architecture.
 - **Persistence:** Local SQLite database (`better-sqlite3`) utilizing a unified interface for JSON serialization.
-- **AI Integration:** Google Gemini API integration for synthesizing raw agent outputs and generating interactive cross-agent debates.
+- **AI Integration:** Google Gemini API integration for synthesizing raw agent outputs, running the FinGPT Copilot, and generating interactive cross-agent debates.
 
 ## Running the Application
 
